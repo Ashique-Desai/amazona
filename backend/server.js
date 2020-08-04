@@ -25,17 +25,13 @@ app.get("/api/config/paypal", (req, res) => {
   res.send(config.PAYPAL_CLIENT_ID);
 })
 
-// app.get("/api/products/:id", (req, res) => {
-//   const productId = req.params.id;
-//   const product = data.products.find(x => x._id === productId);
-//   if (product)
-//     res.send(product);
-//   else
-//     res.status(404).send({ msg: "Product Not Found." })
-// });
+app.use('/uploads', express.static(path.join(__dirname, '/../uploads')));
+app.use(express.static(path.join(__dirname, '/../frontend/public')));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(`${__dirname}/../frontend/public/index.html`));
+});
 
-// app.get("/api/products", (req, res) => {
-//   res.send(data.products);
-// });
+app.listen(config.PORT, () => {
+  console.log('Server started at http://localhost:5000');
+});
 
-app.listen(5000, () => { console.log("Server started at http://localhost:5000") });
