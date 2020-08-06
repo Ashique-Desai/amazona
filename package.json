@@ -22,6 +22,16 @@
     "build": "rm -rf || rmdir /s /q dist && babel backend -d dist",
     "heroku-postbuild": "npm run build && cd frontend && npm install && npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/basir/amazona.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/basir/amazona/issues"
+  },
+  "homepage": "https://github.com/basir/amazona#readme",
   "engines": {
     "node": "12.13.0",
     "npm": "6.12.0"
