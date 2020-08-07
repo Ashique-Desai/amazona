@@ -22,13 +22,17 @@ function ProductScreen(props) {
         props.history.push('/cart/' + props.match.params.id + '?qty=' + qty);
     }
     
-    return <div>
+    return (
+    <div>
         <div className="back-to-result">
             <Link to="/">Back to result</Link>
         </div>
-        { loading ? <div>Loading...</div>:
-          error ? <div>{error}</div>:
-          (
+        {loading ? (
+            <div>Loading...</div>
+        ) : error ? (
+            <div>{error} </div>
+        ) : (
+         <>
             <div className="details">
                 <div className="details-image">
                     <img src={product.image} alt="product"></img>
@@ -76,9 +80,10 @@ function ProductScreen(props) {
                     </ul>
                 </div>
             </div>
-          )
-        }
+        </>
+        )}
   
     </div>
+    );
 }
 export default ProductScreen;
