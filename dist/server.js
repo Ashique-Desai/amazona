@@ -20,13 +20,18 @@ var _orderRoute = _interopRequireDefault(require("./routes/orderRoute"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const mongodbUrl = _config.default.MONGODB_URL;
+// const mongodbUrl = _config.default.MONGODB_URL;
 
-_mongoose.default.connect(mongodbUrl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true
-}).catch(error => console.log(error.reason));
+// _mongoose.default.connect(mongodbUrl, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+//   useCreateIndex: true
+// }).catch(error => console.log(error.reason));
+
+const mongodbUrl = config.MONGODB_URL;
+_mongoose.default.connect(mongodbUrl, { useNewUrlParser: true })
+.then( () => console.log('MongoDB Connected...') )
+.catch(error => console.log(error.reason));
 
 const app = (0, _express.default)();
 app.use(_bodyParser.default.json());
