@@ -24,7 +24,7 @@ const mongodbUrl = _config.default.MONGODB_URL;
 
 _mongoose.default.connect(mongodbUrl, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useUnifiedTopology: true,
   useCreateIndex: true
 }).catch(error => console.log(error.reason));
 

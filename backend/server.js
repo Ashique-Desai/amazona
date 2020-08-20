@@ -12,7 +12,7 @@ import orderRoute from './routes/orderRoute';
 const mongodbUrl = config.MONGODB_URL;
 mongoose.connect(mongodbUrl, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useUnifiedTopology: true,
   useCreateIndex: true
 }).catch(error => console.log(error.reason));
 
