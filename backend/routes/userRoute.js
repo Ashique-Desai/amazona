@@ -1,5 +1,4 @@
 import express from 'express';
-import path from 'path';
 import User from '../models/userModel';
 import {getToken, isAuth} from '../util';
 
