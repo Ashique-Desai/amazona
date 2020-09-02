@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
+import path from 'path';
 import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../actions/userActions';
 
